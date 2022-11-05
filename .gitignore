@@ -1,0 +1,6 @@
+# Python
+Include/
+Lib/
+Scripts/
+
+pyvenv.cfg

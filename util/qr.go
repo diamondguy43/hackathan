@@ -1,7 +1,6 @@
 package util
 
 import (
-	"fmt"
 	"log"
 	"math/rand"
 
@@ -29,15 +28,15 @@ func QRKeyGen(sDate, eDate, location string) []byte {
 		RandomBits: rand.Int(),
 	}
 
+	// Debug to print key
+	// fmt.Println(key)
+
 	jsonData, err := json.Marshal(key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Print(jsonData)
-	fmt.Println()
-	fmt.Print(string(jsonData))
 
-	obfuscatedData := b64.StdEncoding.EncodeToString([]byte(jsonData))
+	obfuscatedData := b64.StdEncoding.EncodeToString(jsonData)
 
 	return QRCodeGen(obfuscatedData)
 }

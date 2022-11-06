@@ -1,18 +1,23 @@
 body {
+    /* scroll-behavior: smooth; */
     padding: 0;
     margin: 0;
     background: rgb(59,141,73);
+    text-align: center;
 }
+
 .navbar {
     background:rgb(255,255,255);
 }
-.nav-link,
+
 .navbar-brand {
     color: rgb(59,141,73);
     cursor: pointer;
 }
 .nav-link {
     margin-right: 1em !important;
+    color: rgb(59,141,73);
+    cursor: pointer;
 }
 .nav-link:hover {
     color: #000;
@@ -20,7 +25,6 @@ body {
 .navbar-collapse {
     justify-content: flex-end;
 }
-
 
 .description {
 	left: 50%;
@@ -43,7 +47,18 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(59 141 73);
+    background-color: rgb(60,142,73);
+    /* background:rgb(255,255,255);     */
     color: white;
     text-align: center;
+}
+
+.scroller {
+    height: 750px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    scroll-snap-align: start;
 }

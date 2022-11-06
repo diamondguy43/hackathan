@@ -1,3 +1,4 @@
+{{ block "layout" .}}
 <!doctype html>
 <html lang="en">
 
@@ -18,16 +19,15 @@
         crossorigin="anonymous"></script>
 
     <!--code for style sheet -->
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+    <script src="assets/main.js"></script>
 
 </head>
 
 <body>
-    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="https://cdn.discordapp.com/attachments/1038497075509346466/1038532713008865290/campfire.png"
                 alt="cmpgrounds-logo" height="40px" class="d-inline-block align-text-top" style="padding-left: 20px;">
         </a>
@@ -38,13 +38,17 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link"
+                        href="https://github.com/diamondguy43/hackathan#technologies">Features/Technologies Used</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="https://pw4253.wixsite.com/hackathon/plans-pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
                 </li>
             </ul>
         </div>
@@ -77,28 +81,42 @@
 
     </header> -->
 
-    <div style="text-align: center; padding-top: 200px; padding-bottom: 100px;">
-        <h3 class="font_3" style="line-height:normal; font-size:100px;">
-            <span style="color:rgb(247, 222, 193);">CMPGROUNDS</span>
-            <br />
-            <span style="color:rgb(255, 240, 223);">Rent campgrounds with NFTs</span>
-        </h3>
+    <div class="scroller">
+        <section>
+            <div style="text-align: center; padding-top: 200px; padding-bottom: 100px;" class="section">
+                <h3 class="font_3" style="line-height:normal; font-size:100px;">
+                    <span style="color:rgb(247, 222, 193);">CMPGROUNDS</span>
+                    <br />
+                    <span style="color:rgb(255, 240, 223);">Rent campgrounds with NFTs</span>
+                </h3>
+            </div>
+        </section>
+        <section>
+            <div style="text-align: center; padding-top: 200px; padding-bottom: 100px;" class="section">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d177461.52098103258!2d-74.2368645076078!3d40.72902191758782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24f0be65c4d21%3A0xd37d562051a57c34!2sCamp%20Gateway%20-%20Staten%20Island!5e0!3m2!1sen!2sus!4v1667700723128!5m2!1sen!2sus"
+                        width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <script src="main.js"></script>
-    
 
-    <footer>
+    <footer style="padding-bottom: 1rem; padding-top: 1rem;">
         <div class="col">
             cmpgrounds
         </div>
-        <div class="col">
-            
+        <div class="col" style="padding-top: 1rem;">
+            <a target="_blank" href="https://github.com/diamondguy43/hackathan"><img height="50px"
+                    src="https://jerseyctf.com/assets/img/github-logo.png" alt="Github Repo"></a>
+            <a target="_blank" href="https://github.com/diamondguy43/hackathan"><img
+                    src="https://cdn.discordapp.com/attachments/1038497075509346466/1038532713008865290/campfire.png"
+                    height="50px" width="50px" alt="description"></a>
         </div>
-        <img src="https://cdn.discordapp.com/attachments/1038497075509346466/1038532713008865290/campfire.png"
-            height="50px" width="50px" alt="description">
     </footer>
-    
 </body>
 
 </html>
+{{end}}

@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -23,16 +24,10 @@ type P_REQ struct {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("*.html"))
 
+	tpl.ExecuteTemplate(w, "layout", nil)
 }
-
-// func info(w http.ResponseWriter, r *http.Request) {
-
-// }
-
-// func mapper(w http.ResponseWriter, r *http.Request) {
-
-// }
 
 func qr(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {

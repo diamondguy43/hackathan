@@ -24,20 +24,62 @@ type P_REQ struct {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
-	tpl := template.Must(template.ParseGlob("*.html"))
+	switch r.Method {
+	case "POST":
+		// var res map[string]string
+		// decoder := json.NewDecoder(r.Body)
+		// err := decoder.Decode(&res)
+		// util.Check(err)
 
-	tpl.ExecuteTemplate(w, "layout", nil)
+		// fmt.Println(r.Body)
+
+		// fmt.Println(res["sDate"])
+
+		var gPost P_REQ
+		err := json.NewDecoder(r.Body).Decode(&gPost)
+		if err != nil {
+			fmt.Println("asdlmnasdf")
+			log.Fatal(err)
+		}
+		defer r.Body.Close()
+
+		fmt.Println(r.Body)
+
+		// json message decoder
+		image := util.QRKeyGen(gPost.StartDate, gPost.EndDate, gPost.Location)
+		w.Write(image)
+		// http.Redirect(w, r, "localhost:9900/qr", http.StatusAccepted)
+	default:
+		tpl := template.Must(template.ParseGlob("*.html"))
+
+		tpl.ExecuteTemplate(w, "layout", nil)
+	}
+}
+
+func search(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "POST":
+		http.Redirect(w, r, "/qr", http.StatusSeeOther)
+	default:
+		tpl := template.Must(template.ParseGlob("*.html"))
+
+		tpl.ExecuteTemplate(w, "layout", nil)
+	}
 }
 
 func qr(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "POST":
+
 		var gPost P_REQ
 		err := json.NewDecoder(r.Body).Decode(&gPost)
 		if err != nil {
+			fmt.Println("bruh")
 			log.Fatal(err)
 		}
 		defer r.Body.Close()
+
+		fmt.Println(r.Body)
 
 		// json message decoder
 		image := util.QRKeyGen(gPost.StartDate, gPost.EndDate, gPost.Location)
@@ -59,6 +101,7 @@ func main() {
 	port := strconv.Itoa(PORT)
 
 	http.HandleFunc("/", root)
+	http.HandleFunc("/search", search)
 	http.HandleFunc("/qr", qr)
 
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))

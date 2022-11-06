@@ -15,6 +15,7 @@
 
   <body>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -26,10 +27,13 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">What We Offer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Why US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About US</a>
                 </li>
             </ul>
         </div>
@@ -37,10 +41,80 @@
 
     <header class="page-header header container-fluid">
         <div class="description">
-            <h1>Welcome to the Landing Page!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
+            <h1>CMPGROUNDS</h1>
+            <p>Rent campgrounds and generate NFTs</p>
         </div>
+      
         
+    <!-- Navigation 
+    <div class = "carousel" id = "mainSlide">
+        <div class = "carousel-inner">
+            <img class= "w-100 d-block" src="./images/headerbackground.jpg" alt ="">
+        <div>
+     </div>
+    -->
+
+    <!--Google map
+    -->
+<div id="map-container-google-1" style ="height: 100%">
+    <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+      style="border:0" allowfullscreen></iframe>
+  </div>
+
+  
+  <!--Google Maps-->
+
+  
+  <div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" />
+      <label class="form-label" for="form1">Search</label>
+    </div>
+    <button type="button" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+    
+
+    <!--Advanced Search Bar-->
+  <form class="row g-3">
+    <div class="col-md-4">
+      <div class="form-outline">
+        <input type="text" class="form-control" id="validationDefault01" value="John" required />
+        <label for="validationDefault01" class="form-label">First name</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-outline">
+        <input type="text" class="form-control" id="validationDefault02" value="Doe" required />
+        <label for="validationDefault02" class="form-label">Last name</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="input-group form-outline">
+        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required />
+        <label for="validationDefaultUsername" class="form-label">Username</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-outline">
+        <input type="text" class="form-control" id="validationDefault03" required />
+        <label for="validationDefault03" class="form-label">Campground</label>
+      </div>
+    </div>
+    
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
+        <label class="form-check-label" for="invalidCheck2">Agree to terms and conditions</label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form> 
+
     </header>
 
 
@@ -51,6 +125,6 @@
 
     <script src="main.js"></script>
 
-  </body>
+</body>
 
 </html>

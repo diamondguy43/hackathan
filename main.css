@@ -21,12 +21,6 @@ body {
     justify-content: flex-end;
 }
 
-.header {
-    background-image: url('images/headerbackground');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
 
 .description {
 	left: 50%;
@@ -36,10 +30,10 @@ body {
 	text-align: center;
 }
 .description h1 {
-	color: #6ab446;
+	color: rgb(247, 222, 193);
 }
 .description p {
-	color: #fff;
+	color: rgb(255,255,255);
 	font-size: 1.3rem;
 	line-height: 1.5;
 }

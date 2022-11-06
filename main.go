@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	PORT = 8080
+	PORT = 9900
 )
 
 type P_REQ struct {

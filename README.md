@@ -10,5 +10,5 @@
 - OpenAI Dall-E for AI Generated Art ([craiyon.com](craiyon.com)) 
 - Domain from Domain.com: [cmpgrounds.tech](cmpgrounds.tech)
 - API for NFTs from Verbwire
-- 
+- CockroachDB SQL Database 
 

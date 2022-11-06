@@ -8,3 +8,9 @@ env/
 
 # Environment Variable
 .env
+
+# Outputs
+QRKEY.jpg
+tmp-qr.png
+response.png
+results.jpg

@@ -3,6 +3,7 @@ package util
 import (
 	"log"
 	"math/rand"
+	"os"
 
 	b64 "encoding/base64"
 	"encoding/json"
@@ -38,7 +39,14 @@ func QRKeyGen(sDate, eDate, location string) []byte {
 
 	obfuscatedData := b64.StdEncoding.EncodeToString(jsonData)
 
-	return QRCodeGen(obfuscatedData)
+	// take QR code
+	qrData := QRCodeGen(obfuscatedData)
+	err = os.WriteFile("tmp-qr", qrData, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return qrData
 }
 
 // QRCodeGen: function response for generating the actual QR Code

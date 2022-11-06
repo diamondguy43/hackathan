@@ -1,21 +1,44 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/draw"
 	"image/jpeg"
+	"image/png"
+	"io/ioutil"
 	"log"
+	"math/rand"
 	"os"
+	"time"
 )
 
 func main() {
-	image1, err := os.Open("cmpgrounds-pics-jpg/1.jpg")
+
+	rand.Seed(time.Now().UnixNano())
+
+	files, err := ioutil.ReadDir("cmpgrounds-pics-jpg")
+	if err != nil {
+		log.Fatal(err)
+	}
+	length := len(files)
+	randIndex := rand.Intn(length)
+
+	// for idx, file := range files {
+	// 	fmt.Println(idx)
+	// 	fmt.Println(file.Name())
+	// }
+
+	fmt.Println(randIndex)
+	fmt.Printf("cmpgrounds-pics-jpgs/%s\n", files[randIndex].Name())
+
+	image1, err := os.Open("cmpgrounds-pics-jpg/1.jpg") // *os.File
 	if err != nil {
 		log.Println("image1")
 		log.Fatal(err)
 	}
 
-	first, err := jpeg.Decode(image1)
+	first, err := jpeg.Decode(image1) // image.Image
 	if err != nil {
 		log.Println("first")
 		log.Fatal(err)
@@ -29,7 +52,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	second, err := jpeg.Decode(image1)
+	second, err := png.Decode(image2)
 	if err != nil {
 		log.Println("second")
 		log.Fatal(err)
@@ -37,7 +60,7 @@ func main() {
 
 	defer image2.Close()
 
-	offset := image.Pt(200, 50)
+	offset := image.Pt(750, 750)
 	b := first.Bounds()
 	image3 := image.NewRGBA(b)
 	draw.Draw(image3, b, first, image.Point{}, draw.Src)

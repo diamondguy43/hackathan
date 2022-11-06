@@ -3,7 +3,7 @@
 - Forever NFT, Temporary Key
 
 ## Site 
-- [cmpgrounds.tech](cmpgrounds.tech)
+- [cmpgrounds.tech](https://cmpgrounds.tech)
 
 ## Technologies
 - Wireframe (Velo with Wix): https://pw4253.wixsite.com/hackathon

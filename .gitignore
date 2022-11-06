@@ -2,10 +2,9 @@
 Include/
 Lib/
 Scripts/
-
 pyvenv.cfg
-
 *.exe
+env/
 
 # Environment Variable
 .env

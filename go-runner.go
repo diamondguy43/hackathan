@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-func main() {
+func Ov() {
 
 	rand.Seed(time.Now().UnixNano())
 

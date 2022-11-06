@@ -53,7 +53,7 @@ func qr(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func Overlay() {
+func main() {
 
 	err := godotenv.Load()
 	if err != nil {

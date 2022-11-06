@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	util "github.com/diamondguy43/hackathan/util"
+	"github.com/joho/godotenv"
 )
 
 const (
@@ -52,6 +54,13 @@ func qr(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
+	util.GetTransaction(os.Getenv("walletAddr"))
+
 	port := strconv.Itoa(PORT)
 
 	http.HandleFunc("/", root)
